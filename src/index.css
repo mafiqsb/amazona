@@ -8,10 +8,15 @@ body {
 }
 
 main {
-  margin: 1rem;
+  flex: 1;
 }
 
-header {
+.btn-primary {
+  background-color: #f0c040;
+  color: #000;
+}
+
+/* header {
   background-color: #404040;
   padding: 1rem;
 }
@@ -19,18 +24,25 @@ header {
 header a {
   font-weight: bold;
   font-style: none;
-}
+} */
 
-header a {
+/* header a {
   color: #fff;
   font: bold;
   text-decoration: none;
+} */
+.site-container {
+  min-height: 100vh;
 }
 
 .products {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.rating span {
+  color: #ffc000;
 }
 
 .product {
@@ -40,9 +52,13 @@ header a {
 
 .product img {
   width: 100%;
-  max-width: 300px;
+  max-width: 400px;
 }
 
 .product-info {
   padding: 1rem;
+}
+
+.max-width {
+  max-width: 100%;
 }
