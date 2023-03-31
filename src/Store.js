@@ -4,25 +4,6 @@ import { createContext, useReducer } from 'react';
 // // components without having to pass props down
 // // through the component tree.
 
-// const initialState = {
-//   cart: {
-//     cartItems: [],
-//   },
-// };
-// function reducer(state, action) {
-//   switch (action.type) {
-//     case 'CART_ADD_ITEM':
-//       // add to cart
-//       const newItem = action.payload;
-//       const existItem = state.cart.cartItems.find(
-//         (item) => item._id === newItem._id
-//       );
-//       const cartItems = existItem
-//         ? state.cart.cartItems.map(
-//             (item) => (item._id === existItem._id ? newItem : item) //newItem update quantity
-//           )
-//         : [...state.cart.cartItems, newItem];
-//       return { ...state, cart: { ...state.cart, cartItems } };
 //     //   return {
 //     //     ...state,
 //     //     cart: {
@@ -30,16 +11,7 @@ import { createContext, useReducer } from 'react';
 //     //       cartItems: [...state.cart.cartItems, action.payload],
 //     //     },
 //     //   };
-//     default:
-//       return state;
-//   }
-// }
 
-// export function StoreProvider(props) {
-//   const [state, dispatch] = useReducer(reducer, initialState);
-//   const value = { state, dispatch };
-//   return <Store.Provider value={value}>{props.children} </Store.Provider>;
-// }
 //StoreProvider() = tempat simpanan
 //The Store.Provider component is used to
 // provide the value prop to all descendant components
@@ -50,6 +22,10 @@ import { createContext, useReducer } from 'react';
 export const Store = createContext();
 
 const initialState = {
+  userInfo: localStorage.getItem('userInfo')
+    ? JSON.parse(localStorage.getItem('userInfo'))
+    : null,
+
   cart: {
     // cartItems: [],
     cartItems: localStorage.getItem('cartItems')
@@ -88,6 +64,16 @@ function reducer(state, action) {
       localStorage.setItem('cartItems', JSON.stringify(cartItems));
       return { ...state, cart: { ...state.cart, cartItems } };
     }
+
+    case 'USER_SIGNIN':
+      return { ...state, userInfo: action.payload };
+
+    case 'USER_SIGNOUT':
+      return {
+        ...state,
+        userInfo: null,
+      };
+
     default:
       return state;
   }
