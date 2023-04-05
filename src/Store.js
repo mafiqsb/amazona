@@ -1,24 +1,5 @@
 import { createContext, useReducer } from 'react';
 
-// export const Store = createContext(); //provides a way to share data between
-// // components without having to pass props down
-// // through the component tree.
-
-//     //   return {
-//     //     ...state,
-//     //     cart: {
-//     //       ...state.cart,
-//     //       cartItems: [...state.cart.cartItems, action.payload],
-//     //     },
-//     //   };
-
-//StoreProvider() = tempat simpanan
-//The Store.Provider component is used to
-// provide the value prop to all descendant components
-// that consume the Store context. The props.children syntax
-// is used to pass any child components of the StoreProvider
-// component to the Store.Provider component.
-
 export const Store = createContext();
 
 const initialState = {
@@ -97,3 +78,22 @@ export function StoreProvider(props) {
   const value = { state, dispatch };
   return <Store.Provider value={value}>{props.children} </Store.Provider>;
 }
+
+// export const Store = createContext(); //provides a way to share data between
+// // components without having to pass props down
+// // through the component tree.
+
+//     //   return {
+//     //     ...state,
+//     //     cart: {
+//     //       ...state.cart,
+//     //       cartItems: [...state.cart.cartItems, action.payload],
+//     //     },
+//     //   };
+
+//StoreProvider() = tempat simpanan
+//The Store.Provider component is used to
+// provide the value prop to all descendant components
+// that consume the Store context. The props.children syntax
+// is used to pass any child components of the StoreProvider
+// component to the Store.Provider component.
