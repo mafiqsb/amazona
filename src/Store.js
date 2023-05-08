@@ -44,6 +44,7 @@ function reducer(state, action) {
     //     cartItems: [...state.cart.cartItems, action.payload],
     //   },
     // };
+
     case 'CART_REMOVE_ITEM': {
       const cartItems = state.cart.cartItems.filter(
         (item) => item._id !== action.payload._id
@@ -80,6 +81,9 @@ function reducer(state, action) {
           paymentMethod: action.payload,
         },
       };
+
+    case 'CART_CLEAR':
+      return { ...state, cart: { ...state.cart, cartItems: [] } };
 
     default:
       return state;
