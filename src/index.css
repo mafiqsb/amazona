@@ -80,3 +80,10 @@ header a {
   border-bottom: 0.2rem solid #f08000;
   color: #f08000;
 }
+
+td {
+  vertical-align: middle;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: left;
+}
