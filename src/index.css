@@ -11,7 +11,8 @@ main {
   flex: 1;
 }
 
-.btn-primary {
+.btn-primary,
+.btn-outline-primary {
   background-color: #f0c040;
   color: #000;
 }
@@ -87,3 +88,30 @@ td {
   padding-bottom: 10px;
   text-align: left;
 }
+
+/* sidebar */
+.navbar-brand {
+  font-weight: bold;
+}
+.side-navbar {
+  width: 240px;
+  height: 100%;
+  position: absolute;
+  left: -300px;
+  background-color: #100901;
+  transition: 0.5s;
+}
+
+.site-container {
+  transition: 0.4s;
+}
+.active-cont {
+  margin-left: 240px;
+}
+.active-nav {
+  left: 0;
+}
+
+/* "targeting a specific element state (active)" as a reference to the class name "active-nav" in your code snippet. However, I made an incorrect assumption in assuming that it refers to a specific element state.
+
+The term "active" in the class name "active-nav" may have a specific meaning within your application or codebase. It is not a standard CSS pseudo-class or predefined state. */
