@@ -112,6 +112,10 @@ td {
   left: 0;
 }
 
+.text-bold {
+  font-weight: bold;
+}
+
 /* "targeting a specific element state (active)" as a reference to the class name "active-nav" in your code snippet. However, I made an incorrect assumption in assuming that it refers to a specific element state.
 
 The term "active" in the class name "active-nav" may have a specific meaning within your application or codebase. It is not a standard CSS pseudo-class or predefined state. */
